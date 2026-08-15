@@ -1,0 +1,262 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #000000;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.app-container {
+  display: flex;
+  gap: 20px;
+  max-width: 1050px;
+  width: 100%;
+  align-items: stretch;
+}
+
+.urna-box {
+  background-color: #edeeec;
+  border-radius: 16px;
+  padding: 20px;
+  flex: 1.3;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.1);
+}
+
+.urna-header {
+  text-align: center;
+}
+
+.urna-sub {
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  color: #475569;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.urna-cargo {
+  color: #ef4444; /* Título em vermelho */
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 2px;
+}
+
+.urna-corpo {
+  display: flex;
+  gap: 15px;
+}
+
+.tela-box {
+  background-color: #000000;
+  border: 1px solid #334155;
+  border-radius: 12px;
+  flex: 1;
+  height: 280px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.foto-candidato {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 1; /* Foto 100% visível sem sombras */
+  display: none;
+  z-index: 1;
+}
+
+.tela-overlay {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 16px;
+  background: transparent; /* Sem degradê cobrindo a imagem */
+}
+
+.tela-label {
+  font-size: 11px;
+  color: #feec50;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.numero-display {
+  display: flex;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.digito-box {
+  width: 28px;
+  height: 36px;
+  border-bottom: 2px solid #feec50;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 22px;
+  font-weight: bold;
+  color: #feec50;
+}
+
+.candidato-nome {
+  font-size: 18px;
+  font-weight: bold;
+  color: #ffffff;
+  text-transform: uppercase;
+  margin-top: 6px;
+}
+
+.candidato-partido {
+  font-size: 12px;
+  color: #94a3b8;
+}
+
+.tela-fim {
+  display: none;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  font-size: 42px;
+  font-weight: bold;
+  color: #feec50;
+  letter-spacing: 2px;
+}
+
+.teclado-box {
+  width: 210px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.teclado-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.btn-tecla {
+  background-color: #1e293b;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  height: 44px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 3px 0 #0f172a;
+  transition: all 0.05s ease;
+}
+
+.btn-tecla:active {
+  transform: translateY(2px);
+  box-shadow: 0 1px 0 #0f172a;
+}
+
+.btn-zero {
+  grid-column: 2;
+}
+
+.btn-acoes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.btn-acao {
+  border: none;
+  border-radius: 5px;
+  height: 38px;
+  font-size: 9px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 3px 0 rgba(0,0,0,0.3);
+}
+
+.btn-acao:active {
+  transform: translateY(2px);
+}
+
+.btn-branco { background-color: #ffffff; color: #000; }
+.btn-corrige { background-color: #f97316; color: #000; }
+.btn-confirma { background-color: #10b981; color: #000; }
+
+.lista-box {
+  background-color: #141414;
+  border: 1px solid #262626;
+  border-radius: 16px;
+  padding: 16px 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.03);
+}
+
+.lista-titulo {
+  font-size: 12px;
+  font-weight: bold;
+  color: #94a3b8;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.candidatos-scroll {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-height: 320px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.candidato-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 8px;
+  border-bottom: 1px solid #262626;
+  font-size: 13px;
+}
+
+.item-num {
+  color: #feec50;
+  font-weight: bold;
+  width: 25px;
+}
+
+.item-nome {
+  flex: 1;
+  color: #e2e8f0;
+  font-weight: 500;
+}
+
+.item-partido {
+  color: #737373;
+  font-size: 11px;
+  font-weight: bold;
+}
