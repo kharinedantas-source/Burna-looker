@@ -1,0 +1,18 @@
+{
+  "name": "Simulador Urna RJ",
+  "organization": "Dashboard RJ",
+  "description": "Simulador de Urna Eletrônica para o Governo do Estado do RJ",
+  "logoUrl": "https://raw.githubusercontent.com/google/datastudio-community-visualizations/master/docs/assets/logo.png",
+  "companyUrl": "https://github.com",
+  "supportUrl": "https://github.com",
+  "packageUrl": "https://github.com",
+  "devMode": true,
+  "components": [
+    {
+      "id": "urna_component",
+      "name": "Urna Eletrônica",
+      "description": "Simulador interativo de votação",
+      "iconUrl": "https://raw.githubusercontent.com/google/datastudio-community-visualizations/master/docs/assets/logo.png"
+    }
+  ]
+}
